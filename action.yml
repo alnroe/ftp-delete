@@ -1,0 +1,27 @@
+
+name: 'ftp-delete-dir'
+author: 'alnroe'
+description: 'Automate deleting a single directory via ftp'
+inputs:
+  host:
+    description: 'FTP host'
+    required: true
+  user:
+    description: 'FTP user'
+    required: true
+  password:
+    description: 'FTP password'
+    required: true
+  remoteDir:
+    description: 'Directory to be deleted'
+    required: true
+  ignoreSSL:
+    description: 'Ignore invalid TLS/SSL certificate (1=ignoreSSL)'
+    required: false
+    default: '0'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  color: 'red'
+  icon: 'delete'
